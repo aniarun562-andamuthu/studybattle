@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – Study Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- APP SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="logo-badge">
+          <div class="logo-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="logo-text">Study<span>Battle</span></div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Combat Arena</div>
+        <a href="dashboard.html" class="nav-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="study-home.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Learning Home</span>
+        </a>
+        <a href="subjects.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span>Subjects & Languages</span>
+          <span class="badge-count">6</span>
+        </a>
+        <a href="battle-modes.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          <span>Battle Modes</span>
+        </a>
+
+        <div class="nav-section-title">Progression</div>
+        <a href="analytics.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Analytics</span>
+        </a>
+        <a href="achievements.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          <span>Achievements</span>
+        </a>
+        <a href="profile.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile & Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="user-mini-card">
+          <div class="avatar-circle">AH</div>
+          <div class="user-mini-info">
+            <div class="user-mini-name user-display-name">Alex Hunter</div>
+            <div class="user-mini-level">
+              <span id="sidebarLevelBadge">⭐ Lvl 4</span> • <span class="text-gold">1,250 XP</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="app-main">
+      <!-- TOP HEADER -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="page-title-box">
+            <h1>Gladiator Dashboard ⚔️</h1>
+            <span class="page-subtitle">Track your rank, daily quests, and combat metrics</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="stat-pill pill-streak" title="Daily Battle Streak">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+            <span id="headerUserStreak">3 Days</span>
+          </div>
+
+          <div class="stat-pill pill-xp" title="Total Experience Points">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span id="headerUserXp">1,250 XP</span>
+          </div>
+
+          <div class="stat-pill pill-level" title="Current Gladiator Level">
+            <span id="headerUserLevel">Lvl 4</span>
+          </div>
+
+          <button class="icon-button" id="headerSoundToggle" title="Audio Effects Toggle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <a href="profile.html" class="avatar-circle" style="width: 38px; height: 38px; font-size: 0.9rem;">
+            AH
+          </a>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <main class="page-content">
+        <!-- WELCOME BANNER & GREETING -->
+        <div class="flex-between mb-2" style="flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 style="font-size: 1.85rem; color: var(--text-white); font-weight: 800;">
+              Welcome back, <span class="gradient-text user-display-name">Alex Hunter</span>! ⚔️
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              You have a 3-day battle streak. Complete 1 more battle today to hit your 200 XP goal!
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="random-battle.html" class="btn btn-primary">
+              <span>🎲 Quick Random Battle</span>
+            </a>
+            <a href="battle-modes.html" class="btn btn-secondary">
+              <span>Arena Selector</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 KEY STAT WIDGETS -->
+        <div class="stat-cards-grid">
+          <!-- Level Widget -->
+          <div class="stat-widget">
+            <div class="stat-widget-info">
+              <h4>Rank Tier</h4>
+              <div class="stat-value">Level 4</div>
+              <div class="stat-subtext">Code Gladiator (250/500 XP)</div>
+            </div>
+            <div class="stat-widget-icon icon-purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+          </div>
+
+          <!-- Streak Widget -->
+          <div class="stat-widget">
+            <div class="stat-widget-info">
+              <h4>Battle Streak</h4>
+              <div class="stat-value">3 Days</div>
+              <div class="stat-subtext">Personal Best: 7 Days 🔥</div>
+            </div>
+            <div class="stat-widget-icon icon-fire">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+            </div>
+          </div>
+
+          <!-- Total XP Widget -->
+          <div class="stat-widget">
+            <div class="stat-widget-info">
+              <h4>Total Experience</h4>
+              <div class="stat-value">1,250 XP</div>
+              <div class="stat-subtext">+130 XP earned today</div>
+            </div>
+            <div class="stat-widget-icon icon-gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+          </div>
+
+          <!-- Battles Completed Widget -->
+          <div class="stat-widget">
+            <div class="stat-widget-info">
+              <h4>Battles Fought</h4>
+              <div class="stat-value">18</div>
+              <div class="stat-subtext">Win Accuracy: 82%</div>
+            </div>
+            <div class="stat-widget-icon icon-cyan">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAILY GOAL CARD & CONTINUE LEARNING BANNER -->
+        <div class="grid-2 mb-2">
+          <!-- Daily Goal Progress -->
+          <div class="card">
+            <div class="flex-between mb-1">
+              <span class="card-title">
+                <span>🎯</span> Today's Goal: 200 XP
+              </span>
+              <span style="font-weight: 700; color: var(--xp-gold);">130 / 200 XP (65%)</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem;">
+              You need just 70 more XP to lock in today's streak protection!
+            </p>
+            <div class="progress-container progress-container-lg">
+              <div class="progress-fill progress-fill-gold" style="width: 65%;">
+                <div class="progress-shimmer"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Continue Learning Card -->
+          <div class="continue-banner" style="margin-bottom: 0;">
+            <div class="continue-info">
+              <span class="badge badge-purple mb-1">In Progress Subject</span>
+              <h3>Python: List Comprehensions</h3>
+              <p>Pick up where you left off. 5 practice battle questions await.</p>
+            </div>
+            <a href="quiz.html?mode=topic&subject=python&topic=List%20Comprehensions" class="btn btn-primary" style="flex-shrink: 0;">
+              Resume Battle →
+            </a>
+          </div>
+        </div>
+
+        <!-- THREE BATTLE MODES LAUNCHPAD -->
+        <div class="mb-2">
+          <div class="flex-between mb-1">
+            <h3 style="color: var(--text-white); font-size: 1.3rem; font-weight: 700;">
+              Choose Your Battle Arena
+            </h3>
+            <a href="battle-modes.html" style="color: var(--accent-purple-light); font-size: 0.88rem; font-weight: 600;">
+              View All Details →
+            </a>
+          </div>
+
+          <div class="modes-row">
+            <!-- Mode 1: Topic Battle -->
+            <div class="mode-card mode-topic">
+              <div class="mode-header">
+                <div class="mode-icon icon-purple">🎯</div>
+                <span class="badge badge-purple">Laser Precision</span>
+              </div>
+              <h3>Topic Battle</h3>
+              <p>Focus on a specific concept like Python List Comprehensions, JS Promises, or SQL JOINs.</p>
+              <div class="flex-between" style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: auto;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">5 Questions • 20s/Q</span>
+                <a href="topic-battle.html" class="btn btn-primary btn-sm">Select Topic →</a>
+              </div>
+            </div>
+
+            <!-- Mode 2: Subject Battle -->
+            <div class="mode-card mode-subject">
+              <div class="mode-header">
+                <div class="mode-icon icon-cyan">⚔️</div>
+                <span class="badge badge-cyan">Curriculum Mastery</span>
+              </div>
+              <h3>Subject Battle</h3>
+              <p>Complete comprehensive test of an entire language curriculum (e.g. Full Python or Full JavaScript).</p>
+              <div class="flex-between" style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: auto;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">5 Questions • 20s/Q</span>
+                <a href="subject-battle.html" class="btn btn-cyan btn-sm">Choose Subject →</a>
+              </div>
+            </div>
+
+            <!-- Mode 3: Random Battle -->
+            <div class="mode-card mode-random">
+              <div class="mode-header">
+                <div class="mode-icon icon-gold">🎲</div>
+                <span class="badge badge-gold">1.25x XP Multiplier</span>
+              </div>
+              <h3>Random Battle</h3>
+              <p>Chaos mode! Mixed questions shuffled across all 6 subjects. Test your cross-disciplinary reflexes.</p>
+              <div class="flex-between" style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: auto;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">6 Questions • High Stakes</span>
+                <a href="quiz.html?mode=random" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                  Fight Now →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECENT ACTIVITY & RECOMMENDED DAILY MISSIONS -->
+        <div class="grid-2">
+          <!-- Daily Missions -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <span>📋</span> Daily Quests
+              </div>
+              <span class="badge badge-cyan">Refreshes in 11h</span>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-left">
+                <span style="font-size: 1.4rem;">⚡</span>
+                <div class="mission-info">
+                  <h5>Complete 1 JavaScript Battle</h5>
+                  <span>Reward: +50 XP</span>
+                </div>
+              </div>
+              <span class="badge badge-green">Claimed ✅</span>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-left">
+                <span style="font-size: 1.4rem;">🎯</span>
+                <div class="mission-info">
+                  <h5>Score 80%+ in any Subject Battle</h5>
+                  <span>Reward: +75 XP</span>
+                </div>
+              </div>
+              <a href="subject-battle.html" class="btn btn-outline btn-sm">Start</a>
+            </div>
+
+            <div class="mission-item">
+              <div class="mission-left">
+                <span style="font-size: 1.4rem;">🔥</span>
+                <div class="mission-info">
+                  <h5>Maintain 3-day Study Streak</h5>
+                  <span>Reward: +100 XP</span>
+                </div>
+              </div>
+              <span class="badge badge-gold">Active 🔥</span>
+            </div>
+          </div>
+
+          <!-- Recent Activity Feed -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <span>⏱️</span> Recent Combat History
+              </div>
+              <a href="analytics.html" style="font-size: 0.82rem; color: var(--accent-purple-light);">View All</a>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+                <div>
+                  <div style="color: var(--text-white); font-size: 0.92rem; font-weight: 600;">
+                    Python: List Comprehensions (4/5)
+                  </div>
+                  <span style="color: var(--text-muted); font-size: 0.78rem;">Topic Battle • Today, 10:30 AM</span>
+                </div>
+                <span style="color: var(--xp-gold); font-weight: 700;">+80 XP</span>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+                <div>
+                  <div style="color: var(--text-white); font-size: 0.92rem; font-weight: 600;">
+                    JavaScript: Full Subject (5/5)
+                  </div>
+                  <span style="color: var(--text-muted); font-size: 0.78rem;">Subject Battle • Yesterday, 4:15 PM</span>
+                </div>
+                <span style="color: var(--xp-gold); font-weight: 700;">+110 XP</span>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <div style="color: var(--text-white); font-size: 0.92rem; font-weight: 600;">
+                    Mixed Arena Chaos Battle (5/6)
+                  </div>
+                  <span style="color: var(--text-muted); font-size: 0.78rem;">Random Battle • 2 days ago</span>
+                </div>
+                <span style="color: var(--xp-gold); font-weight: 700;">+125 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script>if(!window.DATA_SUBJECTS){document.write('<script src="data.js"><\/script>')}</script>
+  <script src="js/app.js"></script>
+  <script>if(!window.getUser){document.write('<script src="app.js"><\/script>')}</script>
+  <script src="js/auth.js"></script>
+  <script>if(!window.initDemoSession){document.write('<script src="auth.js"><\/script>')}</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Smarter with AI – Study Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <!-- PUBLIC HEADER -->
+  <header class="public-header">
+    <a href="index.html" class="logo-badge">
+      <div class="logo-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+      </div>
+      <div class="logo-text">Study<span>Battle</span></div>
+    </a>
+
+    <nav class="public-nav">
+      <a href="index.html" class="public-nav-link">Home</a>
+      <a href="experience.html" class="public-nav-link">Gamification</a>
+      <a href="ai-learning.html" class="public-nav-link active">AI Advisor</a>
+      <a href="subjects.html" class="public-nav-link">Curriculum</a>
+      <a href="battle-modes.html" class="public-nav-link">Battle Modes</a>
+    </nav>
+
+    <div class="public-actions">
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </header>
+
+  <main class="page-content" style="max-width: 1100px; padding-top: 3.5rem;">
+    <!-- SECTION HEADER -->
+    <div class="text-center mb-2">
+      <div class="hero-tag">
+        <span>🤖</span> Step 2 of 2: Intelligent Study Optimization
+      </div>
+      <h1 style="font-size: 2.8rem; font-weight: 800; color: var(--text-white); margin-bottom: 0.75rem;">
+        Learn Smarter with <span class="gradient-text">Study Advisor</span>
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto; font-size: 1.1rem;">
+        No more guessing what to revise next. Our adaptive advisor diagnoses your mistakes after every battle, recommending high-yield topics and curated cheat sheets.
+      </p>
+    </div>
+
+    <!-- TRANSPARENCY NOTICE BANNER -->
+    <div style="background: rgba(6, 182, 212, 0.08); border: 1px dashed var(--border-cyan); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem;">
+      <div style="font-size: 1.8rem; flex-shrink: 0;">⚡</div>
+      <div>
+        <h4 style="color: #67e8f9; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem;">
+          Production Architecture Note: Rule-Based ML Recommendation Prototype
+        </h4>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
+          The recommendations displayed below are built on our rule-based heuristic engine. In a full production deployment with Python Flask, this connects seamlessly to your machine learning model or LLM endpoint at <code>/api/ai/recommendations</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE PROFILE SELECTOR -->
+    <div class="card mb-2">
+      <div class="card-header">
+        <h3 class="card-title">
+          <span>🧑‍💻</span> Select a Sample Student Profile to View AI Recommendations
+        </h3>
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">
+        Click on any profile below to simulate how the study advisor adjusts suggestions based on past quiz errors:
+      </p>
+
+      <div class="grid-3 mb-1" id="profileSelectorGrid">
+        <div class="card card-glow active-profile-pill" style="cursor: pointer; border-color: var(--accent-purple); background: var(--bg-surface-elevated);" onclick="selectAIProfile('alex', this)">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #8b5cf6, #3b82f6);">AH</div>
+            <div>
+              <h4 style="color: var(--text-white); font-size: 0.95rem;">Alex Hunter</h4>
+              <span style="font-size: 0.75rem; color: var(--xp-gold);">Python Focus • Level 4</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">Weakness: List Comprehensions & Tuples</p>
+        </div>
+
+        <div class="card card-glow" style="cursor: pointer;" onclick="selectAIProfile('sam', this)">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #06b6d4, #10b981);">SW</div>
+            <div>
+              <h4 style="color: var(--text-white); font-size: 0.95rem;">Sam Walker</h4>
+              <span style="font-size: 0.75rem; color: #67e8f9;">Frontend Focus • Level 2</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">Weakness: JavaScript Promises & Event Loop</p>
+        </div>
+
+        <div class="card card-glow" style="cursor: pointer;" onclick="selectAIProfile('jordan', this)">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">JD</div>
+            <div>
+              <h4 style="color: var(--text-white); font-size: 0.95rem;">Jordan Davis</h4>
+              <span style="font-size: 0.75rem; color: #fca5a5;">Data Focus • Level 5</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">Weakness: DBMS 3NF Normalization & Joins</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DYNAMIC RECOMMENDATION DISPLAY -->
+    <div class="card card-glass mb-2" id="aiRecommendationsDisplay">
+      <div class="flex-between mb-1">
+        <h3 style="color: var(--text-white); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="color: var(--accent-cyan);">💡</span> Generated Study Path: <span id="targetStudentName">Alex Hunter</span>
+        </h3>
+        <span class="badge badge-purple" id="confidenceBadge">Adaptive Score: 94% Match</span>
+      </div>
+
+      <div class="grid-2 mt-1" id="recCardsContainer">
+        <!-- Injected via JavaScript below -->
+      </div>
+
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          Want to generate recommendations for your own learning?
+        </span>
+        <button class="btn btn-outline btn-sm" onclick="generateSimulatedPlan()">
+          ⚡ Re-evaluate Weak Concepts
+        </button>
+      </div>
+    </div>
+
+    <!-- BOTTOM CALL TO ACTION / NAVIGATION -->
+    <div class="flex-between" style="padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 1rem;">
+      <a href="experience.html" class="btn btn-secondary">
+        <span>← Back to Gamification</span>
+      </a>
+      <div style="display: flex; gap: 1rem;">
+        <a href="signup.html" class="btn btn-primary btn-lg">
+          <span>Create Account & Start Battling →</span>
+        </a>
+        <a href="dashboard.html" class="btn btn-outline btn-lg">
+          <span>Skip to Dashboard</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script>if(!window.DATA_SUBJECTS){document.write('<script src="data.js"><\/script>')}</script>
+  <script src="js/app.js"></script>
+  <script>if(!window.getUser){document.write('<script src="app.js"><\/script>')}</script>
+  <script>
+    const sampleProfiles = {
+      alex: {
+        name: 'Alex Hunter',
+        badge: 'Python Mastery Focus',
+        cards: [
+          {
+            icon: '⚠️',
+            type: 'Weakness Alert (40% Accuracy)',
+            title: 'Python List Comprehensions & Filtering',
+            desc: 'Alex missed 2 consecutive questions on nested comprehensions and dictionary syntax in recent Topic Battles.',
+            actionText: 'Launch Focused Topic Battle',
+            actionUrl: 'quiz.html?mode=topic&subject=python&topic=List%20Comprehensions',
+            resource: 'Python Comprehension Handbook'
+          },
+          {
+            icon: '🌟',
+            type: 'Strength Milestone (95% Accuracy)',
+            title: 'Python Functions & Variable Scope',
+            desc: 'Outstanding mastery of positional *args and LEGB scoping. Ready to attempt advanced Subject Battle.',
+            actionText: 'Take Python Subject Battle',
+            actionUrl: 'quiz.html?mode=subject&subject=python',
+            resource: 'Advanced OOP Architecture'
+          }
+        ]
+      },
+      sam: {
+        name: 'Sam Walker',
+        badge: 'Frontend Mastery Focus',
+        cards: [
+          {
+            icon: '⚠️',
+            type: 'Weakness Alert (35% Accuracy)',
+            title: 'JavaScript Promises & Async/Await',
+            desc: 'Struggles with microtask execution order and Promise.all vs Promise.allSettled error handling.',
+            actionText: 'Launch Focused Topic Battle',
+            actionUrl: 'quiz.html?mode=topic&subject=javascript&topic=Async%2FAwait%20%26%20Promises',
+            resource: 'Modern Asynchronous JS Guide'
+          },
+          {
+            icon: '🌟',
+            type: 'Strength Milestone (90% Accuracy)',
+            title: 'Semantic HTML5 & Responsive Flexbox',
+            desc: 'Rock solid understanding of cross-axis alignment and WCAG compliant accessibility patterns.',
+            actionText: 'Take HTML/CSS Battle',
+            actionUrl: 'quiz.html?mode=subject&subject=html-css',
+            resource: 'CSS Grid & Flexbox Pro Tips'
+          }
+        ]
+      },
+      jordan: {
+        name: 'Jordan Davis',
+        badge: 'Database Systems Focus',
+        cards: [
+          {
+            icon: '⚠️',
+            type: 'Weakness Alert (45% Accuracy)',
+            title: 'DBMS Normalization & Transitive Dependencies',
+            desc: 'Missed questions distinguishing 2NF from 3NF functional dependencies in the database challenge.',
+            actionText: 'Launch Focused Topic Battle',
+            actionUrl: 'quiz.html?mode=topic&subject=dbms&topic=Database%20Normalization%20(1NF%2C%202NF%2C%203NF)',
+            resource: 'Relational Database Schema Cheatsheet'
+          },
+          {
+            icon: '🌟',
+            type: 'Strength Milestone (100% Accuracy)',
+            title: 'SQL Joins & Group Filtering',
+            desc: 'Perfect score on complex LEFT JOINs and HAVING clauses. Challenge completed without errors.',
+            actionText: 'Try Mixed Random Battle',
+            actionUrl: 'quiz.html?mode=random',
+            resource: 'Full-Stack Performance Patterns'
+          }
+        ]
+      }
+    };
+
+    function renderCards(profileKey) {
+      const data = sampleProfiles[profileKey];
+      document.getElementById('targetStudentName').textContent = data.name;
+      document.getElementById('confidenceBadge').textContent = data.badge;
+
+      const container = document.getElementById('recCardsContainer');
+      container.innerHTML = data.cards.map(card => `
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="font-size: 1.5rem;">${card.icon}</span>
+              <span class="badge ${card.icon === '⚠️' ? 'badge-danger' : 'badge-green'}">${card.type}</span>
+            </div>
+            <h4 style="font-size: 1.15rem; color: var(--text-white); margin-bottom: 0.5rem;">${card.title}</h4>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem;">
+              ${card.desc}
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.78rem; color: var(--accent-purple-light); margin-bottom: 0.85rem;">
+              <strong>Resource:</strong> ${card.resource}
+            </div>
+            <a href="${card.actionUrl}" class="btn ${card.icon === '⚠️' ? 'btn-primary' : 'btn-secondary'} btn-sm btn-block">
+              ${card.actionText} →
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectAIProfile(profileKey, el) {
+      document.querySelectorAll('#profileSelectorGrid .card').forEach(c => {
+        c.style.borderColor = 'var(--border-subtle)';
+        c.style.background = 'var(--bg-surface)';
+      });
+      el.style.borderColor = 'var(--accent-purple)';
+      el.style.background = 'var(--bg-surface-elevated)';
+      playAudio('click');
+      renderCards(profileKey);
+    }
+
+    function generateSimulatedPlan() {
+      playAudio('correct');
+      showToast('🔄 AI Engine recalculating weak spots based on recent accuracy...', 'info', 2500);
+      setTimeout(() => {
+        showToast('✨ Study plan refreshed! New focus areas mapped.', 'success', 2500);
+      }, 1000);
+    }
+
+    // Default load
+    renderCards('alex');
+  </script>
+</body>
+</html>

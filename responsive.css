@@ -1,0 +1,250 @@
+/* ==========================================================================
+   STUDY BATTLE - Responsive Stylesheet
+   Breakpoints: 1200px, 992px, 768px, 576px, 420px
+   ========================================================================== */
+
+/* --- 1200px and down (Laptops / Small Desktops) --- */
+@media (max-width: 1200px) {
+  .stat-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .subject-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- 992px and down (Tablets & Medium Screens) --- */
+@media (max-width: 992px) {
+  /* Sidebar becomes off-canvas drawer */
+  .app-sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .app-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 10, 19, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 95;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+  
+  .sidebar-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .app-main {
+    margin-left: 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+  
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  
+  .modes-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .public-header {
+    padding: 0 1.5rem;
+  }
+  
+  .public-nav {
+    display: none;
+  }
+  
+  .public-nav.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+  }
+}
+
+/* --- 768px and down (Smartphones & Small Tablets) --- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.15rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+  }
+  
+  .preview-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .page-content {
+    padding: 1.25rem 1rem;
+  }
+  
+  .app-header {
+    padding: 0 1rem;
+  }
+  
+  .stat-pill.pill-streak span,
+  .stat-pill.pill-xp span,
+  .stat-pill.pill-level span {
+    display: none;
+  }
+  
+  .stat-pill {
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .question-box {
+    padding: 1.5rem;
+  }
+  
+  .question-text {
+    font-size: 1.15rem;
+  }
+  
+  .continue-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .continue-banner .btn {
+    width: 100%;
+  }
+  
+  .subjects-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-pills {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  
+  .filter-pill {
+    flex-shrink: 0;
+  }
+}
+
+/* --- 576px and down (Compact Mobile Phones) --- */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  
+  .auth-card {
+    padding: 1.75rem 1.25rem;
+  }
+  
+  .results-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-hero-card {
+    padding: 2rem 1.25rem;
+  }
+  
+  .quiz-header-bar {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  
+  .quiz-timer-box {
+    justify-content: center;
+  }
+  
+  .quiz-controls-bar {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+  
+  .quiz-controls-bar .btn {
+    width: 100%;
+  }
+  
+  .modal-box {
+    padding: 0;
+  }
+  
+  .modal-header, .modal-body, .modal-footer {
+    padding: 1.25rem;
+  }
+}

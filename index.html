@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Battle – Gamified Learning Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <!-- PUBLIC HEADER -->
+  <header class="public-header">
+    <a href="index.html" class="logo-badge">
+      <div class="logo-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+      </div>
+      <div class="logo-text">Study<span>Battle</span></div>
+    </a>
+
+    <nav class="public-nav">
+      <a href="index.html" class="public-nav-link active">Home</a>
+      <a href="experience.html" class="public-nav-link">Gamification</a>
+      <a href="ai-learning.html" class="public-nav-link">AI Advisor</a>
+      <a href="subjects.html" class="public-nav-link">Curriculum</a>
+      <a href="battle-modes.html" class="public-nav-link">Battle Modes</a>
+    </nav>
+
+    <div class="public-actions">
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-tag">
+        <span>🔥</span> Welcome to the Future of EdTech
+      </div>
+
+      <h1 class="hero-title">
+        Your Learning. <span class="gradient-text">Your Rules.</span><br>Your Battle.
+      </h1>
+
+      <p class="hero-description">
+        Transform monotonous tech studying into a thrilling gamified arena. Compete in timed topic battles, earn XP, maintain streaks, and level up your mastery in Python, JavaScript, DBMS, and UI/UX.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="experience.html" class="btn btn-primary btn-lg">
+          <span>Explore Experience</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="login.html" class="btn btn-secondary btn-lg">
+          <span>Enter Arena (Login)</span>
+        </a>
+        <a href="dashboard.html" class="btn btn-outline btn-lg">
+          <span>Demo Dashboard</span>
+        </a>
+      </div>
+
+      <!-- INTERACTIVE HERO BATTLE PREVIEW CARD -->
+      <div class="hero-preview-card">
+        <div class="preview-top">
+          <div class="preview-badge">
+            <span class="pulse-badge" style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan);"></span>
+            LIVE ARENA DEMO • JAVASCRIPT ES6
+          </div>
+          <span class="badge badge-gold">+20 XP Bounty</span>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: var(--text-white); margin-bottom: 0.75rem;">
+          What does the <code>const</code> keyword declare in JavaScript?
+        </h3>
+
+        <div class="preview-options">
+          <button class="preview-opt-btn" onclick="checkHeroPreview(0, this)">
+            <span class="option-letter">A</span> A reassignable global pointer
+          </button>
+          <button class="preview-opt-btn" onclick="checkHeroPreview(1, this)">
+            <span class="option-letter">B</span> A block-scoped non-reassignable binding
+          </button>
+          <button class="preview-opt-btn" onclick="checkHeroPreview(2, this)">
+            <span class="option-letter">C</span> A mutable primitive stored on disk
+          </button>
+          <button class="preview-opt-btn" onclick="checkHeroPreview(3, this)">
+            <span class="option-letter">D</span> A function-scoped dynamic variable
+          </button>
+        </div>
+
+        <div id="heroPreviewFeedback" style="margin-top: 1rem; font-size: 0.88rem; display: none;"></div>
+      </div>
+
+      <!-- FEATURES PREVIEW GRID -->
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3>XP & Leveling System</h3>
+          <p>Earn XP for every verified correct answer. Climb from Novice Coder to Code Grandmaster and unlock exclusive badges.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3>3 Combat Formats</h3>
+          <p>Choose Topic Battle for precision focus, Subject Battle for full curriculum tests, or Random Battle for high-stakes chaos.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3>Smart Study Advisor</h3>
+          <p>Receive rule-based personalized study suggestions targeted at your weak topics immediately after finishing a battle.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid var(--border-subtle); padding: 2.5rem 2rem; background: var(--bg-darkest); margin-top: 4rem;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+      <div class="logo-badge">
+        <div class="logo-icon-wrap" style="width: 32px; height: 32px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <span style="font-size: 1rem;">Study<span style="color: var(--accent-cyan);">Battle</span></span>
+      </div>
+
+      <div style="color: var(--text-muted); font-size: 0.85rem;">
+        © 2026 Study Battle Platform. Built with Vanilla HTML5, CSS3, & JavaScript. Ready for Flask & SQLite.
+      </div>
+
+      <div style="display: flex; gap: 1.5rem; font-size: 0.88rem;">
+        <a href="experience.html" class="text-secondary hover-lift">Experience</a>
+        <a href="ai-learning.html" class="text-secondary hover-lift">AI Advisor</a>
+        <a href="login.html" class="text-secondary hover-lift">Login</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>if(!window.DATA_SUBJECTS){document.write('<script src="data.js"><\/script>')}</script>
+  <script src="js/app.js"></script>
+  <script>if(!window.getUser){document.write('<script src="app.js"><\/script>')}</script>
+  <script>
+    // Hero preview interactivity
+    function checkHeroPreview(index, btn) {
+      const feedback = document.getElementById('heroPreviewFeedback');
+      feedback.style.display = 'block';
+
+      if (index === 1) {
+        btn.classList.add('correct-preview');
+        feedback.innerHTML = '<span style="color: var(--success); font-weight: 600;">⚡ Correct! +20 XP awarded!</span> <code>const</code> creates block-scoped variables that cannot be reassigned.';
+        playAudio('correct');
+        awardUserXP(20);
+      } else {
+        feedback.innerHTML = '<span style="color: var(--danger); font-weight: 600;">❌ Incorrect!</span> Option B is correct. <code>const</code> variables cannot be reassigned after declaration.';
+        playAudio('wrong');
+      }
+    }
+  </script>
+</body>
+</html>

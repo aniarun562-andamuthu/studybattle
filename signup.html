@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account – Study Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="index.html" class="logo-badge">
+          <div class="logo-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="logo-text">Study<span>Battle</span></div>
+        </a>
+        <h2>Join the Battle Arena</h2>
+        <p>Create your student profile and start leveling up</p>
+      </div>
+
+      <!-- ERROR CONTAINER -->
+      <div id="signupError" class="form-error" style="background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); padding: 0.75rem 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;"></div>
+
+      <form id="signupForm" novalidate>
+        <!-- Name Input -->
+        <div class="form-group">
+          <label class="form-label" for="signupName">Full Name / Gamer Tag</label>
+          <div class="input-wrap">
+            <span class="input-icon-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <input type="text" id="signupName" class="input-field" placeholder="e.g. Alex Hunter" required>
+          </div>
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+          <label class="form-label" for="signupEmail">Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input type="email" id="signupEmail" class="input-field" placeholder="alex@studybattle.dev" required>
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label class="form-label" for="signupPassword">Password (Min 6 characters)</label>
+          <div class="input-wrap">
+            <span class="input-icon-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="signupPassword" class="input-field" placeholder="••••••••" required>
+            <button type="button" class="input-btn-right password-toggle-btn" data-target="signupPassword" aria-label="Toggle password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password Input -->
+        <div class="form-group">
+          <div class="flex-between mb-1">
+            <label class="form-label" for="signupConfirmPassword" style="margin-bottom: 0;">Confirm Password</label>
+            <span id="passwordMatchIndicator" style="font-size: 0.78rem; font-weight: 600;"></span>
+          </div>
+          <div class="input-wrap">
+            <span class="input-icon-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="signupConfirmPassword" class="input-field" placeholder="••••••••" required>
+            <button type="button" class="input-btn-right password-toggle-btn" data-target="signupConfirmPassword" aria-label="Toggle password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Terms of Battle Checkbox -->
+        <div class="mb-2">
+          <label class="checkbox-wrap">
+            <input type="checkbox" id="termsCheck" checked required>
+            <span style="font-size: 0.82rem;">I agree to the Honor Code of the Study Battle Arena</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <span>Create Account & Start Battling</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </form>
+
+      <div class="auth-footer-text">
+        Already have a gladiator account? <a href="login.html">Login here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script>if(!window.DATA_SUBJECTS){document.write('<script src="data.js"><\/script>')}</script>
+  <script src="js/app.js"></script>
+  <script>if(!window.getUser){document.write('<script src="app.js"><\/script>')}</script>
+  <script src="js/auth.js"></script>
+  <script>if(!window.initDemoSession){document.write('<script src="auth.js"><\/script>')}</script>
+</body>
+</html>

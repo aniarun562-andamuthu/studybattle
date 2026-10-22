@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Quiz Battle – Study Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- APP SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="logo-badge">
+          <div class="logo-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="logo-text">Study<span>Battle</span></div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Active Battle</div>
+        <a href="#" class="nav-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          <span id="quizModeSidebarText">In Combat...</span>
+        </a>
+        <a href="battle-modes.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <span>Abandon Battle</span>
+        </a>
+
+        <div class="nav-section-title">Quick Links</div>
+        <a href="dashboard.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="subjects.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span>Subjects</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="avatar-circle">AH</div>
+          <div class="user-mini-info">
+            <div class="user-mini-name user-display-name">Alex Hunter</div>
+            <div class="user-mini-level">
+              <span id="sidebarLevelBadge">⭐ Lvl 4</span> • <span class="text-gold">1,250 XP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="page-title-box">
+            <h1 id="quizModeLabel">⚔️ Active Combat</h1>
+            <span class="page-subtitle" id="quizTopicLabel">Focused Study Challenge</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="stat-pill pill-xp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span id="headerUserXp">1,250 XP</span>
+          </div>
+          <button class="icon-button" id="headerSoundToggle" title="Audio Effects Toggle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" id="quizQuitBtn">
+            <span>Abandon</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <div class="quiz-container" id="quizContainer">
+          <!-- TOP STATUS BAR: COUNTER & TIMER -->
+          <div class="quiz-header-bar">
+            <div>
+              <span id="quizQuestionCounter" style="font-weight: 700; color: var(--text-white); font-size: 1.05rem;">
+                Question 1 of 5
+              </span>
+              <div class="progress-container progress-container-lg mt-1" style="width: 200px;">
+                <div class="progress-fill" id="quizProgressFill" style="width: 20%;"></div>
+              </div>
+            </div>
+
+            <!-- DIGITAL TIMER BOX -->
+            <div class="quiz-timer-box" id="quizTimerBox">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span id="quizTimerSeconds">20s</span>
+            </div>
+          </div>
+
+          <!-- QUESTION CARD -->
+          <div class="question-box">
+            <span class="question-category-tag" id="questionCategory">Category • Difficulty</span>
+            <h2 class="question-text" id="questionText">Loading battle question...</h2>
+
+            <!-- CODE BLOCK (Hidden if no code) -->
+            <div class="code-snippet" id="questionCode" style="display: none;"></div>
+
+            <!-- MULTIPLE CHOICE OPTIONS CONTAINER -->
+            <div class="options-list mt-2" id="optionsContainer">
+              <!-- Rendered by js/quiz.js -->
+            </div>
+          </div>
+
+          <!-- VALIDATION TOAST / INLINE ALERT -->
+          <div id="quizValidationMsg" class="form-error mb-2" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-md); padding: 0.75rem 1rem; text-align: center; font-weight: 600;"></div>
+
+          <!-- NAVIGATION CONTROLS -->
+          <div class="quiz-controls-bar">
+            <button type="button" class="btn btn-secondary" id="quizPrevBtn">
+              <span>← Previous</span>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" id="quizNextBtn">
+              <span>Next Question →</span>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg" id="quizSubmitBtn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);">
+              <span>⚔️ Submit Battle</span>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- QUIT CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="quitConfirmModal">
+    <div class="modal-box" style="max-width: 440px;">
+      <div class="modal-header">
+        <div class="modal-title">Abandon Active Battle?</div>
+        <span class="modal-close-btn" data-close-modal="quitConfirmModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p>If you abandon now, no XP will be awarded for this session and your progress on these questions will be lost. Are you sure?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal="quitConfirmModal">Continue Fighting</button>
+        <button class="btn btn-danger" id="confirmQuitActionBtn">Yes, Abandon</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script>if(!window.DATA_SUBJECTS){document.write('<script src="data.js"><\/script>')}</script>
+  <script src="js/app.js"></script>
+  <script>if(!window.getUser){document.write('<script src="app.js"><\/script>')}</script>
+  <script src="js/auth.js"></script>
+  <script>if(!window.initDemoSession){document.write('<script src="auth.js"><\/script>')}</script>
+  <script src="js/quiz.js"></script>
+  <script>if(!window.QuizEngine){document.write('<script src="quiz.js"><\/script>')}</script>
+</body>
+</html>

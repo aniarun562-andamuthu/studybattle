@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle Results – Study Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- APP SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="logo-badge">
+          <div class="logo-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="logo-text">Study<span>Battle</span></div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Combat Arena</div>
+        <a href="dashboard.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="study-home.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Learning Home</span>
+        </a>
+        <a href="subjects.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span>Subjects & Languages</span>
+          <span class="badge-count">6</span>
+        </a>
+        <a href="battle-modes.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          <span>Battle Modes</span>
+        </a>
+
+        <div class="nav-section-title">Progression</div>
+        <a href="analytics.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Analytics</span>
+        </a>
+        <a href="achievements.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          <span>Achievements</span>
+        </a>
+        <a href="profile.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile & Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="user-mini-card">
+          <div class="avatar-circle">AH</div>
+          <div class="user-mini-info">
+            <div class="user-mini-name user-display-name">Alex Hunter</div>
+            <div class="user-mini-level">
+              <span id="sidebarLevelBadge">⭐ Lvl 4</span> • <span class="text-gold">1,250 XP</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="page-title-box">
+            <h1>Battle Debriefing & Results 🏆</h1>
+            <span class="page-subtitle">Combat performance review, XP yield, and rule-based study advice</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="stat-pill pill-streak">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+            <span id="headerUserStreak">3 Days</span>
+          </div>
+          <div class="stat-pill pill-xp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span id="headerUserXp">1,250 XP</span>
+          </div>
+          <button class="icon-button" id="headerSoundToggle" title="Audio Effects Toggle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+          <a href="profile.html" class="avatar-circle" style="width: 38px; height: 38px; font-size: 0.9rem;">AH</a>
+        </div>
+      </header>
+
+      <main class="page-content" style="max-width: 960px;">
+        <div id="resultsContainer">
+          <!-- HERO CELEBRATION CARD -->
+          <div class="results-hero-card">
+            <div class="trophy-glow">🏆</div>
+            <h2 style="font-size: 2.3rem; font-weight: 800; color: var(--text-white); margin-bottom: 0.4rem;" id="resTitle">
+              Battle Completed!
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.5rem;" id="resSubtitle">
+              Combat session debriefing loaded
+            </p>
+
+            <!-- 4 METRICS BOXES -->
+            <div class="results-metrics-grid">
+              <div class="result-metric-box">
+                <span>Final Score</span>
+                <h3 id="resScore">0 / 0</h3>
+              </div>
+              <div class="result-metric-box">
+                <span>Accuracy</span>
+                <h3 id="resAccuracy" style="color: var(--success);">0%</h3>
+              </div>
+              <div class="result-metric-box">
+                <span>XP Earned</span>
+                <h3 id="resXp" style="color: var(--xp-gold);">+0 XP</h3>
+              </div>
+              <div class="result-metric-box">
+                <span>Time Taken</span>
+                <h3 id="resTime">0m 00s</h3>
+              </div>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary btn-lg" id="retryBattleBtn">
+                <span>🔄 Battle Again</span>
+              </a>
+              <a href="battle-modes.html" class="btn btn-secondary btn-lg">
+                <span>Choose Another Arena</span>
+              </a>
+              <a href="analytics.html" class="btn btn-outline btn-lg">
+                <span>View Analytics</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- SMART RULE-BASED STUDY RECOMMENDATIONS -->
+          <div class="card mb-2" style="border-color: var(--border-cyan);">
+            <div class="card-header">
+              <div class="card-title">
+                <span style="color: var(--accent-cyan);">💡</span> AI Study Advisor: Post-Battle Diagnosis
+              </div>
+              <span class="badge badge-cyan">Rule-Based Diagnostic Engine</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1rem;">
+              Based on the specific questions you answered incorrectly during this battle session, our advisor recommends the following targeted revisions:
+            </p>
+            <div id="resRecommendationsList">
+              <!-- Dynamically populated by js/quiz.js -->
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.75rem;">
+              <em>Notice: Demo diagnostic engine ready to connect with Python Flask & SQLite recommendations table.</em>
+            </div>
+          </div>
+
+          <!-- DETAILED QUESTION REVIEW LIST -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <span>📝</span> Detailed Question Review & Explanations
+              </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
+              Analyze each prompt, compare your submission with the verified correct answer, and read the technical breakdown:
+            </p>
+            <div id="resReviewList">
+              <!-- Injected by js/quiz.js -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script>if(!window.DATA_SUBJECTS){document.write('<script src="data.js"><\/script>')}</script>
+  <script src="js/app.js"></script>
+  <script>if(!window.getUser){document.write('<script src="app.js"><\/script>')}</script>
+  <script src="js/auth.js"></script>
+  <script>if(!window.initDemoSession){document.write('<script src="auth.js"><\/script>')}</script>
+  <script src="js/quiz.js"></script>
+  <script>if(!window.QuizEngine){document.write('<script src="quiz.js"><\/script>')}</script>
+</body>
+</html>
